@@ -39,19 +39,33 @@ class mostPopularViewController: UIViewController {
     
     func buildButtons() {
         
-        let button = UIButton.init(type: .custom)
-//        button.setBackgroundImage(UIImage(named: "Search_icon")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        button.setImage(UIImage(named: "Search_icon")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        button.tintColor = .white
-        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-//        button.setImage(UIImage(named: "magnifyingglass"), for: .normal)
-        
-        
+        let searchButton = UIButton.init(type: .custom)
+        searchButton.setImage(UIImage(named: "Search_icon")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        searchButton.tintColor = .white
+        searchButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
 
-        let barButton = UIBarButtonItem()
-//        barButton.tintColor = .white
-        barButton.customView = button
-        self.navigationItem.rightBarButtonItem = barButton
+        let searchBarButton = UIBarButtonItem()
+        searchBarButton.customView = searchButton
+        
+        
+        let menuButton = UIButton.init(type: .custom)
+        menuButton.setImage(UIImage(named: "menu")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        menuButton.tintColor = .white
+        menuButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        let menuBarButton = UIBarButtonItem()
+        menuBarButton.customView = menuButton
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        self.navigationItem.leftBarButtonItem = menuBarButton
+        self.navigationItem.rightBarButtonItem = searchBarButton
         
         
         
