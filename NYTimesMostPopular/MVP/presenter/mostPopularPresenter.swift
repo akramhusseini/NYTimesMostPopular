@@ -33,7 +33,11 @@ class mostPopularPresenter {
        
     
     
-    
+    /**
+      check API on new york times and load it
+      - Parameter none
+      - Returns: none
+      */
     func getNews() {
         
         view?.displayLoader()
@@ -55,7 +59,11 @@ class mostPopularPresenter {
     
     
     
-    
+    /**
+      configure and return a news cell
+      - Parameter tableView, indexPath
+      - Returns: mostPopularCell
+      */
     func configureNewsCell(tableView: UITableView, indexPath: IndexPath) -> mostPopularCell? {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "mostPopularCell", for: indexPath) as? mostPopularCell {
@@ -82,6 +90,58 @@ class mostPopularPresenter {
     func getNewsCount() -> Int {
         return mostPopularList.count
     }
+    
+    
+    
+    /**
+      generate right bar button items
+      - Parameter none
+      - Returns: UIBarButtonItem
+      */
+    func getRightBarButtons()->[UIBarButtonItem] {
+        
+        let searchButton = UIButton.init(type: .custom)
+        searchButton.setImage(UIImage(named: "Search_icon")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        searchButton.tintColor = .white
+        searchButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+
+      
+        
+        let kebabButton = UIButton.init(type: .custom)
+        kebabButton.setImage(UIImage(named: "kebab")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        kebabButton.tintColor = .white
+        kebabButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        
+        
+        let searchBarButton = UIBarButtonItem()
+              searchBarButton.customView = searchButton
+        let kekbabBarBUtton = UIBarButtonItem()
+        kekbabBarBUtton.customView = kebabButton
+        
+        return [ kekbabBarBUtton, searchBarButton ]
+        
+        
+        
+    }
+    
+    
+    
+    /**
+     generate left bar button items
+     - Parameter none
+     - Returns: UIBarButtonItem
+     */
+    func getLeftBarButton() -> UIBarButtonItem {
+    let menuButton = UIButton.init(type: .custom)
+           menuButton.setImage(UIImage(named: "menu")?.withRenderingMode(.alwaysTemplate), for: .normal)
+           menuButton.tintColor = .white
+           menuButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+           let menuBarButton = UIBarButtonItem()
+           menuBarButton.customView = menuButton
+           return menuBarButton
+    }
+    
+    
     
     
     /**

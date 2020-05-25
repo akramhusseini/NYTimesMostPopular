@@ -28,51 +28,15 @@ class mostPopularViewController: UIViewController {
         
         presenter.attachView(self)
         
-        self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x47e2c2)
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        buildButtons()
+     
+        setupNavBarAndButtons()
         presenter.getNews()
         
         
         
     }
     
-    func buildButtons() {
-        
-        
-        let menuButton = UIButton.init(type: .custom)
-        menuButton.setImage(UIImage(named: "menu")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        menuButton.tintColor = .white
-        menuButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        let menuBarButton = UIBarButtonItem()
-        menuBarButton.customView = menuButton
-        self.navigationItem.leftBarButtonItem = menuBarButton
-        
-        
-        
-        let searchButton = UIButton.init(type: .custom)
-        searchButton.setImage(UIImage(named: "Search_icon")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        searchButton.tintColor = .white
-        searchButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
 
-      
-        
-        let kebabButton = UIButton.init(type: .custom)
-        kebabButton.setImage(UIImage(named: "kebab")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        kebabButton.tintColor = .white
-        kebabButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        
-        
-        let searchBarButton = UIBarButtonItem()
-              searchBarButton.customView = searchButton
-        let kekbabBarBUtton = UIBarButtonItem()
-        kekbabBarBUtton.customView = kebabButton
-        
-        self.navigationItem.rightBarButtonItems = [ kekbabBarBUtton, searchBarButton ]
-        
-        
-        
-    }
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,6 +49,16 @@ class mostPopularViewController: UIViewController {
         presenter.detachView()
         
     }
+    
+    
+    
+    func setupNavBarAndButtons() {
+        self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x47e2c2)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+         self.navigationItem.leftBarButtonItem = presenter.getLeftBarButton()
+        self.navigationItem.rightBarButtonItems = presenter.getRightBarButtons()
+    }
+    
     
     /**
        this function displays the loader while the API is loading
