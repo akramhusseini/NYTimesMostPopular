@@ -8,11 +8,15 @@
 
 import Foundation
 
-struct mostPopularModel : Codable {
+struct mostPopularModel {
     var uri: String = ""
     var url: String = ""
     var id: Int = 0
-    
+    var images = [imageModel]()
+    var title = ""
+    var abstract = ""
+    var pubDate = ""
+    var author = ""
     init() {
         
     }
@@ -28,6 +32,49 @@ struct mostPopularModel : Codable {
         
         if let id = dict["id"] as? Int {
             self.id = id
+        }
+        
+        if let mediaList = dict["media"] as? [NSDictionary],
+            let firstMediaEntry = mediaList.first,
+            let imagesList = firstMediaEntry["media-metadata"] as? [NSDictionary] {
+            self.images = imagesList.compactMap{imageModel(dict: $0)}
+        }
+        
+        if let title = dict["title"] as? String {
+            self.title = title
+        }
+        
+        if let abstract = dict["abstract"] as? String {
+            self.abstract = abstract
+        }
+        
+        if let byline = dict["byline"] as? String {
+            self.author = byline
+        }
+        
+        if let pubDate = dict["published_date"] as? String {
+            self.pubDate = pubDate 
+        }
+        
+    }
+    
+}
+
+
+
+struct imageModel {
+    
+    var url = ""
+    var format = ""
+    
+    init(dict: NSDictionary) {
+        if let url = dict["url"] as? String {
+            self.url = url
+            
+        }
+        if let format = dict["format"] as? String {
+            self.format = format
+            
         }
     }
     

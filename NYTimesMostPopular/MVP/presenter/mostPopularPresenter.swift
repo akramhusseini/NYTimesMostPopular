@@ -24,7 +24,7 @@ class mostPopularPresenter {
     private var service: mostPopularService
     weak private var view : mostPopularView?
     
-    var mostPopularList = [mostPopularModel]()
+    private var mostPopularList = [mostPopularModel]()
     
     
     init(_ service: mostPopularService) {
@@ -56,9 +56,32 @@ class mostPopularPresenter {
     
     
     
+    func configureNewsCell(tableView: UITableView, indexPath: IndexPath) -> mostPopularCell? {
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "mostPopularCell", for: indexPath) as? mostPopularCell {
+            
+            if let imageURL = self.mostPopularList[indexPath.row].images.first(where: {$0.format == "Standard Thumbnail"})?.url {
+                cell.itemImageView.downloaded(from: imageURL)
+            }
+            
+            cell.entryTitle.text = self.mostPopularList[indexPath.row].title
+            cell.content.text = self.mostPopularList[indexPath.row].abstract
+            cell.authorLabel.text = self.mostPopularList[indexPath.row].author
+            cell.timeLabel.text = self.mostPopularList[indexPath.row].pubDate
+            
+            
+            
+            
+            return cell
+        } else {
+            
+            return nil
+        }
+    }
     
-    
-    
+    func getNewsCount() -> Int {
+        return mostPopularList.count
+    }
     
     
     /**

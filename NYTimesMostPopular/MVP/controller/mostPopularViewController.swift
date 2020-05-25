@@ -13,6 +13,12 @@ class mostPopularViewController: UIViewController {
     
     
     
+    
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     let presenter = mostPopularPresenter(mostPopularService())
     
     
@@ -21,8 +27,8 @@ class mostPopularViewController: UIViewController {
         super.viewDidLoad()
         
         presenter.attachView(self)
-        
         presenter.getNews()
+        
         
         
     }
@@ -69,5 +75,25 @@ class mostPopularViewController: UIViewController {
 extension mostPopularViewController : mostPopularView {
     func displayNews() {
         print("test 1")
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
+}
+
+
+
+
+
+extension mostPopularViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return presenter.getNewsCount()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return presenter.configureNewsCell(tableView: tableView, indexPath: indexPath) ?? UITableViewCell()
+    }
+    
+    
 }

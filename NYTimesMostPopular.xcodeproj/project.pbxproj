@@ -36,6 +36,8 @@
 		00EDC35E247C3CC000C61796 /* loadder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC35C247C3CC000C61796 /* loadder.swift */; };
 		00EDC35F247C3CC000C61796 /* loadder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC35C247C3CC000C61796 /* loadder.swift */; };
 		00EDC365247C495700C61796 /* mostPopularModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC364247C495700C61796 /* mostPopularModel.swift */; };
+		00EDC367247C4E5F00C61796 /* mostPopularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC366247C4E5F00C61796 /* mostPopularCell.swift */; };
+		00EDC369247C51D000C61796 /* imageViewImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC368247C51D000C61796 /* imageViewImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		00EDC358247C3B7200C61796 /* mostPopularService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mostPopularService.swift; sourceTree = "<group>"; };
 		00EDC35C247C3CC000C61796 /* loadder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadder.swift; sourceTree = "<group>"; };
 		00EDC364247C495700C61796 /* mostPopularModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mostPopularModel.swift; sourceTree = "<group>"; };
+		00EDC366247C4E5F00C61796 /* mostPopularCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mostPopularCell.swift; sourceTree = "<group>"; };
+		00EDC368247C51D000C61796 /* imageViewImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageViewImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +217,7 @@
 		00EDC345247C377800C61796 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				00EDC366247C4E5F00C61796 /* mostPopularCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 				00EDC34C247C39F000C61796 /* URLComponenets.swift */,
 				00EDC350247C3A2000C61796 /* JSON.swift */,
 				00EDC35C247C3CC000C61796 /* loadder.swift */,
+				00EDC368247C51D000C61796 /* imageViewImageLoader.swift */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -367,7 +373,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0049C107247C2C8A004C157C /* AppDelegate.swift in Sources */,
+				00EDC369247C51D000C61796 /* imageViewImageLoader.swift in Sources */,
 				00EDC35D247C3CC000C61796 /* loadder.swift in Sources */,
+				00EDC367247C4E5F00C61796 /* mostPopularCell.swift in Sources */,
 				0049C109247C2C8A004C157C /* SceneDelegate.swift in Sources */,
 				00EDC359247C3B7200C61796 /* mostPopularService.swift in Sources */,
 				00EDC33D247C36D600C61796 /* mostPopularViewController.swift in Sources */,
