@@ -39,14 +39,6 @@ class mostPopularViewController: UIViewController {
     
     func buildButtons() {
         
-        let searchButton = UIButton.init(type: .custom)
-        searchButton.setImage(UIImage(named: "Search_icon")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        searchButton.tintColor = .white
-        searchButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-
-        let searchBarButton = UIBarButtonItem()
-        searchBarButton.customView = searchButton
-        
         
         let menuButton = UIButton.init(type: .custom)
         menuButton.setImage(UIImage(named: "menu")?.withRenderingMode(.alwaysTemplate), for: .normal)
@@ -54,18 +46,29 @@ class mostPopularViewController: UIViewController {
         menuButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         let menuBarButton = UIBarButtonItem()
         menuBarButton.customView = menuButton
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         self.navigationItem.leftBarButtonItem = menuBarButton
-        self.navigationItem.rightBarButtonItem = searchBarButton
+        
+        
+        
+        let searchButton = UIButton.init(type: .custom)
+        searchButton.setImage(UIImage(named: "Search_icon")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        searchButton.tintColor = .white
+        searchButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+
+      
+        
+        let kebabButton = UIButton.init(type: .custom)
+        kebabButton.setImage(UIImage(named: "kebab")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        kebabButton.tintColor = .white
+        kebabButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        
+        
+        let searchBarButton = UIBarButtonItem()
+              searchBarButton.customView = searchButton
+        let kekbabBarBUtton = UIBarButtonItem()
+        kekbabBarBUtton.customView = kebabButton
+        
+        self.navigationItem.rightBarButtonItems = [ kekbabBarBUtton, searchBarButton ]
         
         
         
@@ -89,7 +92,7 @@ class mostPopularViewController: UIViewController {
        - Returns: none
        */
       func displayLoader() {
-          self.showSpinner(onView: self.view)
+          self.ShowLoader()
       }
       
       
@@ -99,7 +102,7 @@ class mostPopularViewController: UIViewController {
        - Returns: none
        */
       func removeLoader() {
-          self.removeSpinner()
+          self.dismissLoader()
       }
     
     
