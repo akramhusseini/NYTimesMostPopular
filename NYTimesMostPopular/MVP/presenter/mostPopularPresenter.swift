@@ -12,6 +12,8 @@ import UIKit
 
 protocol mostPopularView: UIViewController {
     
+    func displayLoader()
+    func removeLoader()
     func displayNews()
     
 }
@@ -22,6 +24,9 @@ class mostPopularPresenter {
     private var service: mostPopularService
     weak private var view : mostPopularView?
     
+    var mostPopularList = [mostPopularModel]()
+    
+    
     init(_ service: mostPopularService) {
            self.service = service
        }
@@ -30,11 +35,17 @@ class mostPopularPresenter {
     
     
     func getNews() {
+        
+        view?.displayLoader()
+        
         service.getNews { (result, error) in
+            self.view?.removeLoader()
             if let error = error {
                 debugPrint(error.localizedDescription)
-            } else {
-                print(result)
+            } else if let results = result?["results"] as? [NSDictionary] {
+
+                self.mostPopularList = results.compactMap{mostPopularModel(dict: $0)}
+                
                 self.view?.displayNews()
             }
         }

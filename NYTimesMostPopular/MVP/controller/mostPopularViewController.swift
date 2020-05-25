@@ -41,6 +41,25 @@ class mostPopularViewController: UIViewController {
         
     }
     
+    /**
+       this function displays the loader while the API is loading
+       - Parameter none
+       - Returns: none
+       */
+      func displayLoader() {
+          self.showSpinner(onView: self.view)
+      }
+      
+      
+      /**
+       this function hides the loader when the API is done loading
+       - Parameter none
+       - Returns: none
+       */
+      func removeLoader() {
+          self.removeSpinner()
+      }
+    
     
 }
 

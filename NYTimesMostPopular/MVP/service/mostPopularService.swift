@@ -33,7 +33,7 @@ class mostPopularService {
             if let error = error {
 //                debugPrint(error.localizedDescription)
                 completion(nil, error)
-            } else {
+            } else if let result = result {
                 completion(result, error)
                 
             }
