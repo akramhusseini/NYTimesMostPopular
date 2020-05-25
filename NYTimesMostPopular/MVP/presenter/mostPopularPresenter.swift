@@ -57,6 +57,10 @@ class mostPopularPresenter {
     
     
     
+    func getNewsItem(indexPath: IndexPath) -> mostPopularModel {
+        return mostPopularList[indexPath.row]
+    }
+    
     
     
     /**
@@ -77,7 +81,7 @@ class mostPopularPresenter {
             cell.authorLabel.text = self.mostPopularList[indexPath.row].author
             cell.timeLabel.text = self.mostPopularList[indexPath.row].pubDate
             
-            
+            cell.selectionStyle = .none
             
             
             return cell
@@ -131,7 +135,7 @@ class mostPopularPresenter {
      - Parameter none
      - Returns: UIBarButtonItem
      */
-    func getLeftBarButton() -> UIBarButtonItem {
+    func getLeftBarButtons() -> UIBarButtonItem {
     let menuButton = UIButton.init(type: .custom)
            menuButton.setImage(UIImage(named: "menu")?.withRenderingMode(.alwaysTemplate), for: .normal)
            menuButton.tintColor = .white

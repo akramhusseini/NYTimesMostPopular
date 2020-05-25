@@ -17,6 +17,9 @@ struct mostPopularModel {
     var abstract = ""
     var pubDate = ""
     var author = ""
+    var source = ""
+    
+    
     init() {
         
     }
@@ -55,6 +58,11 @@ struct mostPopularModel {
         if let pubDate = dict["published_date"] as? String {
             self.pubDate = pubDate 
         }
+        
+        if let source = dict["source"] as? String {
+            self.source = source
+        }
+        
         
     }
     

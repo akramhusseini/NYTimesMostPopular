@@ -28,15 +28,13 @@ class mostPopularViewController: UIViewController {
         
         presenter.attachView(self)
         
-     
+        
         setupNavBarAndButtons()
         presenter.getNews()
         
-        
-        
     }
     
-
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,29 +53,29 @@ class mostPopularViewController: UIViewController {
     func setupNavBarAndButtons() {
         self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x47e2c2)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-         self.navigationItem.leftBarButtonItem = presenter.getLeftBarButton()
+        self.navigationItem.leftBarButtonItem = presenter.getLeftBarButtons()
         self.navigationItem.rightBarButtonItems = presenter.getRightBarButtons()
     }
     
     
     /**
-       this function displays the loader while the API is loading
-       - Parameter none
-       - Returns: none
-       */
-      func displayLoader() {
-          self.ShowLoader()
-      }
-      
-      
-      /**
-       this function hides the loader when the API is done loading
-       - Parameter none
-       - Returns: none
-       */
-      func removeLoader() {
-          self.dismissLoader()
-      }
+     this function displays the loader while the API is loading
+     - Parameter none
+     - Returns: none
+     */
+    func displayLoader() {
+        self.ShowLoader()
+    }
+    
+    
+    /**
+     this function hides the loader when the API is done loading
+     - Parameter none
+     - Returns: none
+     */
+    func removeLoader() {
+        self.dismissLoader()
+    }
     
     
 }
@@ -106,6 +104,14 @@ extension mostPopularViewController : UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return presenter.configureNewsCell(tableView: tableView, indexPath: indexPath) ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "newsDetailsViewController") as! newsDetailsViewController
+        vc.newsItem = presenter.getNewsItem(indexPath: indexPath)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
