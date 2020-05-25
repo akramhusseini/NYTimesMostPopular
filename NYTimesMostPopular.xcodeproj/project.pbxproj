@@ -17,6 +17,15 @@
 		00EDC33D247C36D600C61796 /* mostPopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC33C247C36D600C61796 /* mostPopularViewController.swift */; };
 		00EDC33E247C36D600C61796 /* mostPopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC33C247C36D600C61796 /* mostPopularViewController.swift */; };
 		00EDC33F247C36D600C61796 /* mostPopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC33C247C36D600C61796 /* mostPopularViewController.swift */; };
+		00EDC348247C39A800C61796 /* httpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC347247C39A800C61796 /* httpManager.swift */; };
+		00EDC349247C39A800C61796 /* httpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC347247C39A800C61796 /* httpManager.swift */; };
+		00EDC34A247C39A800C61796 /* httpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC347247C39A800C61796 /* httpManager.swift */; };
+		00EDC34D247C39F000C61796 /* URLComponenets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC34C247C39F000C61796 /* URLComponenets.swift */; };
+		00EDC34E247C39F000C61796 /* URLComponenets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC34C247C39F000C61796 /* URLComponenets.swift */; };
+		00EDC34F247C39F000C61796 /* URLComponenets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC34C247C39F000C61796 /* URLComponenets.swift */; };
+		00EDC351247C3A2100C61796 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC350247C3A2000C61796 /* JSON.swift */; };
+		00EDC352247C3A2100C61796 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC350247C3A2000C61796 /* JSON.swift */; };
+		00EDC353247C3A2100C61796 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC350247C3A2000C61796 /* JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +60,9 @@
 		0049C128247C2C8C004C157C /* NYTimesMostPopularUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTimesMostPopularUITests.swift; sourceTree = "<group>"; };
 		0049C12A247C2C8C004C157C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00EDC33C247C36D600C61796 /* mostPopularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mostPopularViewController.swift; sourceTree = "<group>"; };
+		00EDC347247C39A800C61796 /* httpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = httpManager.swift; sourceTree = "<group>"; };
+		00EDC34C247C39F000C61796 /* URLComponenets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponenets.swift; sourceTree = "<group>"; };
+		00EDC350247C3A2000C61796 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +113,7 @@
 		0049C105247C2C8A004C157C /* NYTimesMostPopular */ = {
 			isa = PBXGroup;
 			children = (
+				00EDC34B247C39D000C61796 /* helper */,
 				00EDC346247C378B00C61796 /* manager */,
 				0049C141247C34EC004C157C /* MVP */,
 				0049C106247C2C8A004C157C /* AppDelegate.swift */,
@@ -190,8 +203,18 @@
 		00EDC346247C378B00C61796 /* manager */ = {
 			isa = PBXGroup;
 			children = (
+				00EDC347247C39A800C61796 /* httpManager.swift */,
 			);
 			path = manager;
+			sourceTree = "<group>";
+		};
+		00EDC34B247C39D000C61796 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				00EDC34C247C39F000C61796 /* URLComponenets.swift */,
+				00EDC350247C3A2000C61796 /* JSON.swift */,
+			);
+			path = helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +351,9 @@
 				0049C107247C2C8A004C157C /* AppDelegate.swift in Sources */,
 				0049C109247C2C8A004C157C /* SceneDelegate.swift in Sources */,
 				00EDC33D247C36D600C61796 /* mostPopularViewController.swift in Sources */,
+				00EDC351247C3A2100C61796 /* JSON.swift in Sources */,
+				00EDC348247C39A800C61796 /* httpManager.swift in Sources */,
+				00EDC34D247C39F000C61796 /* URLComponenets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +362,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0049C11E247C2C8C004C157C /* NYTimesMostPopularTests.swift in Sources */,
+				00EDC352247C3A2100C61796 /* JSON.swift in Sources */,
+				00EDC34E247C39F000C61796 /* URLComponenets.swift in Sources */,
+				00EDC349247C39A800C61796 /* httpManager.swift in Sources */,
 				00EDC33E247C36D600C61796 /* mostPopularViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,6 +374,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0049C129247C2C8C004C157C /* NYTimesMostPopularUITests.swift in Sources */,
+				00EDC353247C3A2100C61796 /* JSON.swift in Sources */,
+				00EDC34F247C39F000C61796 /* URLComponenets.swift in Sources */,
+				00EDC34A247C39A800C61796 /* httpManager.swift in Sources */,
 				00EDC33F247C36D600C61796 /* mostPopularViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
