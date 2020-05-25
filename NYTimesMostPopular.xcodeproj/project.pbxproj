@@ -38,6 +38,7 @@
 		00EDC365247C495700C61796 /* mostPopularModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC364247C495700C61796 /* mostPopularModel.swift */; };
 		00EDC367247C4E5F00C61796 /* mostPopularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC366247C4E5F00C61796 /* mostPopularCell.swift */; };
 		00EDC369247C51D000C61796 /* imageViewImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC368247C51D000C61796 /* imageViewImageLoader.swift */; };
+		00EDC36B247C61D200C61796 /* color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDC36A247C61D200C61796 /* color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		00EDC364247C495700C61796 /* mostPopularModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mostPopularModel.swift; sourceTree = "<group>"; };
 		00EDC366247C4E5F00C61796 /* mostPopularCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mostPopularCell.swift; sourceTree = "<group>"; };
 		00EDC368247C51D000C61796 /* imageViewImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageViewImageLoader.swift; sourceTree = "<group>"; };
+		00EDC36A247C61D200C61796 /* color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 				00EDC350247C3A2000C61796 /* JSON.swift */,
 				00EDC35C247C3CC000C61796 /* loadder.swift */,
 				00EDC368247C51D000C61796 /* imageViewImageLoader.swift */,
+				00EDC36A247C61D200C61796 /* color.swift */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				00EDC35D247C3CC000C61796 /* loadder.swift in Sources */,
 				00EDC367247C4E5F00C61796 /* mostPopularCell.swift in Sources */,
 				0049C109247C2C8A004C157C /* SceneDelegate.swift in Sources */,
+				00EDC36B247C61D200C61796 /* color.swift in Sources */,
 				00EDC359247C3B7200C61796 /* mostPopularService.swift in Sources */,
 				00EDC33D247C36D600C61796 /* mostPopularViewController.swift in Sources */,
 				00EDC355247C3ACF00C61796 /* mostPopularPresenter.swift in Sources */,

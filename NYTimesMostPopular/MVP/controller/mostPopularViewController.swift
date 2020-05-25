@@ -27,13 +27,35 @@ class mostPopularViewController: UIViewController {
         super.viewDidLoad()
         
         presenter.attachView(self)
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x47e2c2)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        buildButtons()
         presenter.getNews()
         
         
         
     }
     
-    
+    func buildButtons() {
+        
+        let button = UIButton.init(type: .custom)
+//        button.setBackgroundImage(UIImage(named: "Search_icon")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.setImage(UIImage(named: "Search_icon")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.tintColor = .white
+        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+//        button.setImage(UIImage(named: "magnifyingglass"), for: .normal)
+        
+        
+
+        let barButton = UIBarButtonItem()
+//        barButton.tintColor = .white
+        barButton.customView = button
+        self.navigationItem.rightBarButtonItem = barButton
+        
+        
+        
+    }
     
     
     override func viewWillAppear(_ animated: Bool) {
