@@ -1,4 +1,4 @@
-<a href="http://fvcproductions.com"><img src="https://imgur.com/lXotUFj" title="NYTimesApp" ></a>
+<a href="https://i.imgur.com/lXotUFj.png" title="NYTimesApp" ></a>
 
 
 # NY Times Most Popular
